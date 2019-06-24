@@ -1,4 +1,4 @@
-package kuriboh.rules
+package com.github.wasanx25.rules
 
 import io.gitlab.arturbosch.detekt.api.*
 import org.jetbrains.kotlin.psi.KtCallExpression

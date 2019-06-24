@@ -1,5 +1,6 @@
-package kuriboh.rules
+package com.github.wasanx25
 
+import com.github.wasanx25.rules.CallPrintln
 import io.gitlab.arturbosch.detekt.test.assertThat
 import io.gitlab.arturbosch.detekt.test.lint
 import org.spekframework.spek2.Spek
