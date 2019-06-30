@@ -15,6 +15,7 @@ apply {
 
 plugins {
     id("org.jetbrains.kotlin.jvm").version("1.3.21")
+    `maven-publish`
 }
 
 repositories {
@@ -29,4 +30,16 @@ dependencies {
     testImplementation("io.gitlab.arturbosch.detekt:detekt-test:$detektVersion")
     testImplementation("org.junit.platform:junit-platform-launcher:$junitPlatformVersion")
     testImplementation("org.spekframework.spek2:spek-runner-junit5:$spekVersion")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.wasanx25"
+            artifactId = "kuriboh"
+            version = "0.0.1-SNAPSHOT"
+
+            from(components["java"])
+        }
+    }
 }
