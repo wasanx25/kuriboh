@@ -23,4 +23,19 @@ class CallPrintlnTest : Spek({
             assertThat(subject.lint(code)).hasSize(3)
         }
     }
+
+    describe("CallPrint rule") {
+        it("reports to exists print() yet") {
+            val code = """
+                fun test() {
+                    print("test1")
+                    emptyList()
+                    print("test2")
+                    print("test3")
+                }
+            """
+
+            assertThat(subject.lint(code)).hasSize(3)
+        }
+    }
 })

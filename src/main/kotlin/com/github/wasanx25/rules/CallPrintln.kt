@@ -16,11 +16,12 @@ class CallPrintln : Rule() {
     override fun visitCallExpression(expression: KtCallExpression) {
         super.visitCallExpression(expression)
         expression.psiOrParent.children.toList()
-            .filter { it is KtNameReferenceExpression && it.text == PRINTLN }
-            .onEach { report(CodeSmell(issue, Entity.from(expression), "Don't keep 'println()'")) }
+            .filter { it is KtNameReferenceExpression && (it.text == PRINTLN || it.text == PRINT) }
+            .onEach { report(CodeSmell(issue, Entity.from(expression), "Don't keep 'println()' or 'print()'")) }
     }
 
     companion object {
         private const val PRINTLN = "println"
+        private const val PRINT = "print"
     }
 }
