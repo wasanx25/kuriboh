@@ -1,15 +1,15 @@
 package com.github.wasanx25
 
-import com.github.wasanx25.rules.CallPrintln
+import com.github.wasanx25.rules.UselessCallFunction
 import io.gitlab.arturbosch.detekt.test.assertThat
 import io.gitlab.arturbosch.detekt.test.lint
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
-class CallPrintlnTest : Spek({
-    val subject by memoized { CallPrintln() }
+class UselessCallFunctionTest : Spek({
+    val subject by memoized { UselessCallFunction() }
 
-    describe("CallPrintln rule") {
+    describe("UselessCallFunction rule") {
         it("reports to exists println() yet") {
             val code = """
                 fun test() {
@@ -24,7 +24,7 @@ class CallPrintlnTest : Spek({
         }
     }
 
-    describe("CallPrint rule") {
+    describe("UselessCallFunction rule") {
         it("reports to exists print() yet") {
             val code = """
                 fun test() {

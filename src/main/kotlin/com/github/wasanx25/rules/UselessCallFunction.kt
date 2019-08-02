@@ -4,7 +4,7 @@ import io.gitlab.arturbosch.detekt.api.*
 import org.jetbrains.kotlin.psi.KtCallExpression
 import org.jetbrains.kotlin.psi.KtNameReferenceExpression
 
-class CallPrintln : Rule() {
+class UselessCallFunction : Rule() {
 
     override val issue = Issue(
         javaClass.simpleName,
