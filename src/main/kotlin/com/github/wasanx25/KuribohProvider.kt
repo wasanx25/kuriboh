@@ -5,7 +5,7 @@ import io.gitlab.arturbosch.detekt.api.RuleSetProvider
 import com.github.wasanx25.rules.UselessCallFunction
 
 class KuribohProvider : RuleSetProvider {
-    override val ruleSetId: String = "sample"
+    override val ruleSetId: String = "style"
 
     override fun instance(config: Config): RuleSet {
         return RuleSet(ruleSetId, listOf(
