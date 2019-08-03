@@ -15,13 +15,14 @@ class UselessCallFunction : Rule() {
 
     override fun visitCallExpression(expression: KtCallExpression) {
         super.visitCallExpression(expression)
+        val functions = listOf(PRINTLN, PRINT)
         expression.psiOrParent.children.toList()
-            .filter { it is KtNameReferenceExpression && (it.text == PRINTLN || it.text == PRINT) }
+            .filter { it is KtNameReferenceExpression && functions.contains(it.text) }
             .onEach { report(CodeSmell(issue, Entity.from(expression), "Don't keep 'println()' or 'print()'")) }
     }
 
     companion object {
         private const val PRINTLN = "println"
-        private const val PRINT = "print"
+        private const val PRINT   = "print"
     }
 }
