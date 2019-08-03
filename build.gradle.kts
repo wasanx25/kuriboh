@@ -37,7 +37,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.github.wasanx25"
             artifactId = "kuriboh"
-            version = "0.0.1-SNAPSHOT"
+            version = "0.0.1"
 
             from(components["java"])
         }
